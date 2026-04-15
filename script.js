@@ -2,25 +2,23 @@ const btnValidar = document.getElementById("btnValidar");
 const txtTelefone = document.getElementById("txtTelefone");
 const txtAno = document.getElementById("txtAno");
 
-txtTelefone.addEventListener("input", (e) => {
-    let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não é número
-    
-    if (value.length > 0) {
-        value = "(" + value;
-    }
-    if (value.length > 3) {
-        value = value.slice(0, 3) + ") " + value.slice(3);
-    }
-    if (value.length > 10) {
-        value = value.slice(0, 10) + "-" + value.slice(10);
-    }
-    
-    e.target.value = value.slice(0, 15); // Limita ao tamanho do celular
-});
+if (txtTelefone) {
+    txtTelefone.addEventListener("input", (e) => {
+        let value = e.target.value.replace(/\D/g, ""); 
+        
+        if (value.length > 0) { value = "(" + value; }
+        if (value.length > 3) { value = value.slice(0, 3) + ") " + value.slice(3); }
+        if (value.length > 10) { value = value.slice(0, 10) + "-" + value.slice(10); }
+        
+        e.target.value = value.slice(0, 15);
+    });
+}
 
-txtAno.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/\D/g, ""); // Remove qualquer letra ou símbolo
-});
+if (txtAno) {
+    txtAno.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/\D/g, ""); 
+    });
+}
 
 function validar() {
     let valido = true;
@@ -113,4 +111,25 @@ function limparErro(inputId, erroId) {
     document.getElementById(erroId).classList.remove("visivel");
 }
 
-btnValidar.addEventListener("click", validar);
+if (btnValidar) {
+    btnValidar.addEventListener("click", validar);
+}
+
+const btnLerMais = document.getElementById("btnLerMais");
+
+if (btnLerMais) {
+    btnLerMais.addEventListener("click", mostrarTexto);
+}
+
+function mostrarTexto() {
+            var texto = document.getElementById("textoExtra");
+            var btn = document.getElementById("btnLerMais");
+ 
+            if (texto.style.display === "none") {
+                texto.style.display = "block";
+                btn.textContent = "Ocultar";
+            } else {
+                texto.style.display = "none";
+                btn.textContent = "Ver tudo";
+            }
+        }
