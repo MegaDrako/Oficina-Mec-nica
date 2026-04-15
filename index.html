@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina Mecânica - Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav"><a href="/Exercicio/" class="active">Agendamento</a></div>
+        <div class="nav"><a href="/Exercicio/paginas/pecas.html">Peças</a></div>
+        <div class="nav"><a href="/Exercicio/paginas/carros.html">Carros</a></div>
+        <div class="nav"><a href="/Exercicio/paginas/mecanicos.html">Mecânicos</a></div>
+        <div class="nav"><a href="/Exercicio/paginas/sobre.html">Sobre</a></div>
+    </nav>
+
+    <div class="bd">
+        <div class="card">
+            <h1>Agendar Revisão</h1>
+
+            <div class="campo">
+                <label for="txtNome">Nome do Proprietário</label>
+                <input type="text" id="txtNome" placeholder="Informe seu nome">
+                <span class="msg-erro" id="erroNome">Informe o nome do proprietário.</span>
+            </div>
+
+            <div class="campo">
+                <label for="txtEmail">Email de Contato</label>
+                <input type="text" id="txtEmail" placeholder="Informe seu e-mail">
+                <span class="msg-erro" id="erroEmail">Informe um email válido.</span>
+            </div>
+
+            <div class="campo">
+                <label for="txtTelefone">Celular para Contato</label>
+                <input type="text" id="txtTelefone" placeholder="Informe seu celular" maxlength="15">
+                <span class="msg-erro" id="erroTelefone">Informe um celular válido com DDD.</span>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <div class="campo" style="flex: 1.1;">
+                    <label for="txtAno">Ano</label>
+                    <input type="text" id="txtAno" placeholder="Informe o ano" maxlength="4">
+                    <span class="msg-erro" id="erroAno">Ano inválido.</span>
+                </div>
+                <div class="campo" style="flex: 2;">
+                    <label for="txtVeiculo">Modelo</label>
+                    <input type="text" id="txtVeiculo" placeholder="Informe o modelo">
+                    <span class="msg-erro" id="erroVeiculo">Informe o modelo.</span>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="txtPlaca">Placa do Carro</label>
+                <input type="text" id="txtPlaca" placeholder="Informe a placa do seu carro" maxlength="7">
+                <span class="msg-erro" id="erroPlaca">Use o formato Mercosul (ex: ABC1D23)</span>
+            </div>
+
+            <div class="campo">
+                <label for="txtProblema">Descrição do Problema</label>
+                <textarea id="txtProblema" rows="4" placeholder="Descreva o que está acontecendo..."></textarea>
+                <span class="msg-erro" id="erroProblema">Descreva o problema do veículo.</span>
+            </div>
+
+            <button type="button" id="btnValidar">Confirmar Agendamento</button>
+            <div id="msgSucesso">✓ Agendamento realizado com sucesso!</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="nav">Henry Gabriel de Belo Barcellos</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
